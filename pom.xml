@@ -66,8 +66,7 @@
     </distributionManagement>
 
     <scm>
-        <connection>scm:git:https://github.com/conterra/JSqlParser.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com:conterra/JSqlParser.git</developerConnection>
+        <connection>scm:git:https://github.com/conterra/JSqlParser.git</connection>        
         <url>https://github.com/conterra/JSqlParser.git</url>
         <tag>HEAD</tag>
     </scm>
@@ -161,18 +160,20 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>2.5.2</version>
+                <version>2.5.3</version>
                 <configuration>
-                    <localCheckout>true</localCheckout>
+                    <!--<localCheckout>true</localCheckout>
                     <pushChanges>false</pushChanges>
                     <mavenExecutorId>forked-path</mavenExecutorId>
                     <arguments>-Drelease.deployment.url=${release.deployment.url}</arguments>
+					-->
+					<preparationGoals>clean</preparationGoals>
                 </configuration>
                 <dependencies>
                     <dependency>
                         <groupId>org.apache.maven.scm</groupId>
                         <artifactId>maven-scm-provider-gitexe</artifactId>
-                        <version>1.9</version>
+                        <version>1.9.4</version>
                     </dependency>
                 </dependencies>
             </plugin>
